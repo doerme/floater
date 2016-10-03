@@ -418,3 +418,69 @@ body{
 	margin-left: -315px;
 	top: 430px;
 }
+
+.water3.anstep1{
+	position: absolute;
+	left: -14px;
+	bottom: 542px;
+	width: 100%;
+}
+
+.bottle.anstep1{
+	position: absolute;
+	width: 70px;
+}
+
+.net.anstep1{
+	position: absolute;
+}
+
+.css-an-net-s1{
+	-webkit-animation: nets1 8s ease both;
+	animation: nets1 8s ease both;
+}
+
+@-webkit-keyframes nets1 {}
+@keyframes nets1 {
+	0% {opacity: 0; bottom: 0px; right: 0px; -webkit-transform:rotate(0deg);}
+	5% {opacity: 1; bottom: 300px; right: 0px; -webkit-transform:rotate(50deg);}
+	15%{opacity: 1; bottom: 800px; right: 100px; -webkit-transform:rotate(30deg);}
+	25%{opacity: 1; bottom: 800px; right: 100px; -webkit-transform:rotate(-50deg);}
+	40%{opacity: 1; bottom: 630px; right: 100px; -webkit-transform:rotate(-50deg);}
+	53%{opacity: 1; bottom: 630px; right: 200px; -webkit-transform:rotate(-40deg);}
+	65%{opacity: 1; bottom: 630px; right: 100px; -webkit-transform:rotate(-50deg);}
+	80%{opacity: 1; bottom: 630px; right: 150px; -webkit-transform:rotate(-40deg);}
+	100%{opacity: 1; bottom: 750px; right: 180px; -webkit-transform:rotate(10deg);}
+}
+
+.css-an-water-s1{
+	-webkit-animation: waters1 8s ease both;
+	animation: waters1 8s ease both;
+}
+
+
+@-webkit-keyframes waters1 {}
+@keyframes waters1 {
+	0% {opacity: 0;}
+	30%{opacity: 0;}
+	35%{opacity: 1;}
+	90%{opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.css-an-bottle-s1{
+	-webkit-animation: bottles1 8s ease both;
+	animation: bottles1 8s ease both;
+}
+
+@-webkit-keyframes bottles1 {}
+@keyframes bottles1 {
+	0% {opacity: 0;}
+	79% {opacity: 0;}
+	80%{opacity: 1; bottom: 600px; right: 360px; -webkit-transform:rotate(0deg);}
+	100%{opacity: 1; bottom: 770px; right: 390px; -webkit-transform:rotate(-10deg);}
+}
+
+
+
+

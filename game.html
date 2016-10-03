@@ -16,13 +16,13 @@
 		<img class="tower" src="./img/tower.png" />
 		<img class="tree" src="./img/tree.png" />
 		<div class="ctrl-block">
-			<div class="bt-wrap">
+			<div class="bt-wrap js-throw-bottle">
 				<img class="tbimg" src="./img/bottle.png">
 				<div class="bottle-num">10</div>
 				<span class="font">扔一个</span>
 			</div>
 
-			<div class="bt-wrap">
+			<div class="bt-wrap js-search-bottle">
 				<img class="netimg" src="./img/net.png">
 				<div class="rest-time">50分28秒开捞</div>
 				<span class="font">捞捞看</span>
@@ -46,7 +46,7 @@
 		<div class="window_main">
 			<div class="bottle-title">捞到一个瓶子获得10积分</div>
 			<div class="bottle-main">瓶子在海上漂浮，或许会有人捡起来并回应您。</div>
-			<img class="throw_bt" src="./img/throw_bt.png" />
+			<img class="throw_bt js-throw-bt" src="./img/throw_bt.png" />
 		</div>
 	</div>
 	<!-- 捞到瓶子end -->
@@ -56,17 +56,25 @@
 		<div class="window_mask"></div>
 		<div class="window_main">
 			<textarea class="main_area" row="5" placeholder="写漂流瓶"></textarea>
-			<img class="throw_bt" src="./img/throw_bt.png" />
+			<img class="throw_bt js-throw-bt" src="./img/throw_bt.png" />
 		</div>
 	</div>
 	<!-- 内容发布end -->
 
 	<!-- 你的瓶子已经漂向远方 -->
-	<div class="window_wrap go_away">
+	<div class="window_wrap go_away hide">
 		<div class="window_mask"></div>
 		<img class="window_main" src="./img/got_tips.png" />
 	</div>	
 	<!-- 你的瓶子已经漂向远方end -->
+
+	<!-- 瓶子动画 -->
+	<div class="animation_block hide">
+		<img class="bottle anstep1 css-an-bottle-s1" src="./img/bottle.png" />
+		<img class="net anstep1 css-an-net-s1" src="./img/net.png">
+		<img class="water3 anstep1 css-an-water-s1" src="./img/water_3.png" />
+	</div>
+	<!-- 瓶子动画end -->
 
 <script type="text/javascript" src = "./js/jquery-3.1.0.min.js"></script>
 <script type="text/javascript">
@@ -75,6 +83,31 @@
 
 	$(function(){
 		adaptscreen(750);
+
+		/*捞捞看*/
+		$('body').on('click', '.js-search-bottle', function(){
+			$('.animation_block').removeClass('hide');
+			setTimeout(function(){
+				$('.window_wrap.bottle_window').removeClass('hide');
+				$('.animation_block').addClass('hide');
+			},9000)
+		})
+
+		/*扔	一个*/
+		$('body').on('click', '.js-throw-bottle', function(){
+			$('.window_wrap.write_block').removeClass('hide');
+		})
+
+		/*写完 扔出去*/
+		$('body').on('click', '.js-throw-bt', function(){
+			$('.window_wrap.write_block').addClass('hide');
+			$('.window_wrap.go_away').removeClass('hide');
+			setTimeout(function(){
+				$('.window_wrap.go_away').addClass('hide');
+			},1000);
+		})
+
+
 	})
 
 	function adaptscreen(widthnum){
