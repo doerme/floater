@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no"> 
+	<meta http-equiv="Content-Type">
+	<meta content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=750px, user-scalable=no">
+	<title>漂流瓶</title>
+	<link rel="stylesheet" type="text/css" href="./css/reset.css?v=2" />
+	<link rel="stylesheet" type="text/css" href="./css/index.css?v=2" />
+</head>
+<body>
+	<div class="game_wrap">
+		<img class="tower" src="./img/tower.png" />
+		<img class="tree" src="./img/tree.png" />
+		<div class="ctrl-block">
+			<div class="bt-wrap">
+				<img class="tbimg" src="./img/bottle.png">
+				<div class="bottle-num">10</div>
+				<span class="font">扔一个</span>
+			</div>
+
+			<div class="bt-wrap">
+				<img class="netimg" src="./img/net.png">
+				<div class="rest-time">50分28秒开捞</div>
+				<span class="font">捞捞看</span>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- 还没购买瓶子 -->
+	<div class="window_wrap notbuy_window hide">
+		<div class="window_mask"></div>
+		<div class="window_main">
+			<img class="buy_bt" src="./img/buy_bt.png" />
+		</div>
+	</div>
+	<!-- 还没购买瓶子end -->
+
+	<!-- 捞到瓶子 -->
+	<div class="window_wrap bottle_window hide">
+		<div class="window_mask"></div>
+		<div class="window_main">
+			<div class="bottle-title">捞到一个瓶子获得10积分</div>
+			<div class="bottle-main">瓶子在海上漂浮，或许会有人捡起来并回应您。</div>
+			<img class="throw_bt" src="./img/throw_bt.png" />
+		</div>
+	</div>
+	<!-- 捞到瓶子end -->
+
+	<!-- 内容发布 -->
+	<div class="window_wrap write_block hide">
+		<div class="window_mask"></div>
+		<div class="window_main">
+			<textarea class="main_area" row="5" placeholder="写漂流瓶"></textarea>
+			<img class="throw_bt" src="./img/throw_bt.png" />
+		</div>
+	</div>
+	<!-- 内容发布end -->
+
+	<!-- 你的瓶子已经漂向远方 -->
+	<div class="window_wrap go_away">
+		<div class="window_mask"></div>
+		<img class="window_main" src="./img/got_tips.png" />
+	</div>	
+	<!-- 你的瓶子已经漂向远方end -->
+
+<script type="text/javascript" src = "./js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+	document.addEventListener('touchmove',function(event){
+		event.preventDefault(); },false);
+
+	$(function(){
+		adaptscreen(750);
+	})
+
+	function adaptscreen(widthnum){
+		var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+		ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+		deviceWidth = window.screen.width, // 设备的宽度
+		devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+		targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+		if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+		targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+		$('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+		}else{
+			$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+		}
+	}
+</script>
+</body>
+</html>
