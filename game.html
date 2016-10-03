@@ -24,7 +24,7 @@
 
 			<div class="bt-wrap js-search-bottle">
 				<img class="netimg" src="./img/net.png">
-				<div class="rest-time" data-lasttime="6000"></div>
+				<div class="rest-time" data-lasttime="10"></div>
 				<span class="font">捞捞看</span>
 			</div>
 
@@ -68,6 +68,13 @@
 	</div>	
 	<!-- 你的瓶子已经漂向远方end -->
 
+	<!-- 请稍后 -->
+	<div class="window_wrap waitting hide">
+		<div class="window_mask"></div>
+		<img class="window_main" src="./img/waitting.png" />
+	</div>
+	<!-- 请稍后end -->
+
 	<!-- 瓶子动画 -->
 	<div class="animation_block hide">
 		<img class="bottle anstep1 css-an-bottle-s1" src="./img/bottle.png" />
@@ -89,6 +96,14 @@
 
 		/*捞捞看*/
 		$('body').on('click', '.js-search-bottle', function(){
+
+			if($(this).attr('canthrow') == 0){
+				$('.window_wrap.waitting').removeClass('hide');
+				setTimeout(function(){
+					$('.window_wrap.waitting').addClass('hide');
+				},2000);
+				return;
+			}
 			$('.animation_block').removeClass('hide');
 			setTimeout(function(){
 				$('.window_wrap.bottle_window').removeClass('hide');
@@ -135,11 +150,14 @@
 				$('[data-lasttime]').each(function(){
 					var restsecond = $(this).data('lasttime');
 					var restNow = parseInt((restsecond * 1000  - (tmpDate - curDate))/1000);
-					console.log(restNow);
+					//console.log(restNow);
 					if(restNow < 0){
 						restNow = 0;
+						$('.rest-time').addClass('hide');
+						$('.js-search-bottle').attr('canthrow','1');
 					}else{
 						$(this).html(formatSeconds(restNow) + '开捞')
+						$('.js-search-bottle').attr('canthrow','0');
 					}
 				})
 

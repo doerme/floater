@@ -386,7 +386,6 @@ body{
 	width: 615px;
 	height: 658px;
 	margin-left: -308px;
-
 }
 
 .window_wrap.write_block .window_main .throw_bt{
@@ -414,6 +413,14 @@ body{
 .window_wrap.go_away .window_main{
 	position: absolute;
 	width: 629px;
+	left: 50%;
+	margin-left: -315px;
+	top: 430px;
+}
+
+.window_wrap.waitting .window_main{
+	position: absolute;
+	width: 631px;
 	left: 50%;
 	margin-left: -315px;
 	top: 430px;
