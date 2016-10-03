@@ -24,7 +24,7 @@
 
 			<div class="bt-wrap js-search-bottle">
 				<img class="netimg" src="./img/net.png">
-				<div class="rest-time">50分28秒开捞</div>
+				<div class="rest-time" data-lasttime="6000"></div>
 				<span class="font">捞捞看</span>
 			</div>
 
@@ -81,6 +81,9 @@
 	document.addEventListener('touchmove',function(event){
 		event.preventDefault(); },false);
 
+	var curDate = new Date();
+	var timer={};
+
 	$(function(){
 		adaptscreen(750);
 
@@ -98,9 +101,9 @@
 			$('.window_wrap.write_block').removeClass('hide');
 		})
 
-		/*写完 扔出去*/
+		/*写完 看完 扔出去*/
 		$('body').on('click', '.js-throw-bt', function(){
-			$('.window_wrap.write_block').addClass('hide');
+			$('.window_wrap.write_block, .window_wrap.bottle_window').addClass('hide');
 			$('.window_wrap.go_away').removeClass('hide');
 			setTimeout(function(){
 				$('.window_wrap.go_away').addClass('hide');
@@ -108,6 +111,42 @@
 		})
 
 
+
+		/*倒计时*/
+		function formatSeconds(value) {
+		    var theTime = parseInt(value);// 秒
+		    var theTime1 = 0;// 分
+		    var theTime2 = 0;// 小时
+		    if(theTime > 60) {
+		        theTime1 = parseInt(theTime/60);
+		        theTime = parseInt(theTime%60);
+		    }
+		        var result = ""+parseInt(theTime)+"秒";
+
+		        if(theTime1 > 0) {
+		            result = ""+parseInt(theTime1)+"分"+result;
+		        }
+		    return result;
+		}
+
+		function daojishi(){
+			timer = setInterval(function(){
+				var tmpDate = new Date();
+				$('[data-lasttime]').each(function(){
+					var restsecond = $(this).data('lasttime');
+					var restNow = parseInt((restsecond * 1000  - (tmpDate - curDate))/1000);
+					console.log(restNow);
+					if(restNow < 0){
+						restNow = 0;
+					}else{
+						$(this).html(formatSeconds(restNow) + '开捞')
+					}
+				})
+
+			},1000)
+		}
+
+		daojishi();
 	})
 
 	function adaptscreen(widthnum){
