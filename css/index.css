@@ -368,6 +368,19 @@ body{
 	overflow: hidden;
 }
 
+.window_wrap.bottle_window .window_main .bottle-image{
+	position: absolute;
+	top: 220px;
+	left: 50%;
+	margin-left: -276px;
+	font-size: 30px;
+	color: #2f2f2f;
+	width: 552px;
+	height: 280px;
+	overflow: hidden;
+	border: 1px solid #FFF;
+}
+
 
 .window_wrap.bottle_window .window_main .throw_bt{
 	position: absolute;
