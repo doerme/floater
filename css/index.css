@@ -363,14 +363,14 @@ body{
 	left: 0px;
 	width: 100%;
 	text-align: center;
-	top: 140px;
+	top: 130px;
 }
 
 .window_wrap.bottle_window .window_main .bottle-title{
 	position: absolute;
 	font-size: 48px;
 	color: #FFF;
-	top: 200px;
+	top: 170px;
 	left: 0px;
 	width: 100%;
 	text-align: center;
@@ -378,35 +378,44 @@ body{
 
 .window_wrap.bottle_window .window_main .bottle-main{
 	position: absolute;
-	top: 280px;
+	top: 250px;
 	left: 50%;
 	margin-left: -276px;
 	padding: 25px;
 	font-size: 30px;
 	color: #2f2f2f;
 	width: 502px;
-	height: 230px;
+	height: 300px;
+	background: #FFF;
 	overflow: hidden;
 }
 
 .window_wrap.bottle_window .window_main .bottle-image{
 	position: absolute;
-	top: 280px;
+	top: 250px;
 	left: 50%;
 	margin-left: -276px;
 	font-size: 30px;
 	color: #2f2f2f;
 	width: 552px;
-	height: 280px;
+	height: 350px;
 	overflow: hidden;
+	text-align: center;
+}
+
+.window_wrap.bottle_window .window_main .bottle-image img{
+	display: inline-block;
+	max-height: 100%;
+	max-width: 100%;
 	border: 1px solid #FFF;
+
 }
 
 
 .window_wrap.bottle_window .window_main .throw_bt{
 	position: absolute;
 	width: 521px;
-	top: 588px;
+	top: 630px;
 	left: 50%;
 	margin-left: -260px;
 }
