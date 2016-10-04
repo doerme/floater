@@ -563,7 +563,30 @@ body{
 	content: '';
 }
 
+.tips-main-block{
+	position: relative;
+	margin-top: 110px;
+	background: url('../img/tips_main_bg.png') no-repeat;
+	background-size: 100% auto;
+	height: 400px;
+}
 
+.tips-main-block .tips-text{
+	position: absolute;
+	font-size: 36px;
+	color: #0c0c0c;
+	top: 240px;
+	left: 224px;
+	text-align: center;
+}
+
+.back-bt{
+	display: block;
+	width: 521px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 100px;
+}
 
 
 
