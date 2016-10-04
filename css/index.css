@@ -220,6 +220,7 @@ body{
 	height: 100%;
 	background: url('../img/game_bg.jpg') no-repeat center bottom;
 	background-size: 100% auto;
+	overflow: hidden;
 }
 
 .game_wrap .tower{
@@ -605,6 +606,19 @@ body{
 	color: #FFF;
 }
 
+.main-wrap.center .top-dc{
+	pointer-events: none;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.main-wrap.center .bottom-dc{
+	pointer-events: none;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
 
 
 
