@@ -316,7 +316,7 @@ body{
 
 .window_wrap.notbuy_window .window_main{
 	position: absolute;
-	top: 300px;
+	top: 200px;
 	left: 50%;
 	background: url('../img/have_not_buy.png') no-repeat;
 	background-size: 100% auto;
@@ -336,7 +336,7 @@ body{
 
 .window_wrap.bottle_window .window_main{
 	position: absolute;
-	top: 300px;
+	top: 200px;
 	left: 50%;
 	background: url('../img/msg_box_bg.png') no-repeat;
 	background-size: 100% auto;
@@ -422,7 +422,7 @@ body{
 
 .window_wrap.write_block .window_main{
 	position: absolute;
-	top: 300px;
+	top: 200px;
 	left: 50%;
 	background: url('../img/write_page.png') no-repeat;
 	background-size: 100% auto;
@@ -458,7 +458,7 @@ body{
 	width: 629px;
 	left: 50%;
 	margin-left: -315px;
-	top: 400px;
+	top: 300px;
 }
 
 .window_wrap.waitting .window_main{
@@ -466,7 +466,7 @@ body{
 	width: 631px;
 	left: 50%;
 	margin-left: -315px;
-	top: 400px;
+	top: 300px;
 }
 
 .water3.anstep1{
